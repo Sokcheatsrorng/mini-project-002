@@ -1,34 +1,55 @@
-
-"use client";
 import { Carousel } from "flowbite-react";
+
+const carouselItem = [
+  {
+    image:
+      "https://static.theceomagazine.net/wp-content/uploads/2019/12/12082634/aston-valhalla.jpg",
+    title: "Luxury Cars",
+    description:
+      "Explore our collection of luxury cars and experience unparalleled comfort and performance.",
+    buttonTitle: "View Collection",
+  },
+  {
+    image: "https://cdn.wallpapersafari.com/67/35/AeaFvR.jpg",
+    title: "Electric Vehicles",
+    description:
+      "Discover the future of transportation with our electric vehicle lineup. Go green, go electric!",
+    buttonTitle: "Explore EVs",
+  },
+  {
+    image:
+      "https://www.edmunds.com/assets/m/cs/blt8928d999e34a98ca/65834161b782f01486583824/2024_kia_ev9_front_1600.jpg",
+    title: "Classic Cars",
+    description:
+      "Experience the nostalgia and elegance of classic cars from different eras. Timeless beauty, timeless style.",
+    buttonTitle: "Discover Classics",
+  },
+];
+
 export default function HeroSectionComponent() {
   return (
-    <div className="relative h-screen rounded-none">
-    <Carousel>
-      <div className="flex h-full items-center justify-center" style={{ backgroundImage: 'url("https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2022/09/16114642/Modern-Car-Features-_-Cover-16-9-22.jpg")', backgroundSize: 'cover', backgroundPosition: 'center',opacity:'0.8' }}>
-        <div className="text-center text-white" style={{opacity:'1'}}>
-          <h1 className="text-4xl md:text-6xl font-bold">Welcome to BLOCKCHAIN</h1>
-          <p className="text-lg md:text-xl mt-4">Explore our innovative courses and stay updated with the latest technology trends.</p>
-          <button className="mt-8 px-6 py-3 bg-blue-700 text-white rounded-md text-lg font-semibold hover:bg-blue-600">Get Started</button>
-        </div>
-      </div>
-      <div className="flex h-full items-center justify-center" style={{ backgroundImage: 'url("https://cdn.wallpapersafari.com/67/35/AeaFvR.jpg")', backgroundSize: 'cover', backgroundPosition: 'center',opacity:'0.8'}}>
-        <div className="text-center text-white" style={{opacity:'1'}}>
-          <h1 className="text-4xl md:text-6xl font-bold">Learn Anywhere, Anytime</h1>
-          <p className="text-lg md:text-xl mt-4">Our courses are designed to fit your schedule. Start learning today!</p>
-          <button className="mt-8 px-6 py-3 bg-blue-700 text-white rounded-md text-lg font-semibold hover:bg-blue-600">Explore Courses</button>
-        </div>
-      </div>
-      <div className="flex h-full items-center justify-center" style={{ backgroundImage: 'url("https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-LHD-6.22.jpg")', backgroundSize: 'cover', backgroundPosition: 'center',opacity:'0.8' }}>
-        <div className="text-center text-white" style={{opacity:'1'}
-        }>
-          <h1 className="text-4xl md:text-6xl font-bold">Join Our Community</h1>
-          <p className="text-lg md:text-xl mt-4">Connect with professionals, share insights, and grow together.</p>
-          <button className="mt-8 px-6 py-3 bg-blue-700 text-white rounded-md text-lg font-semibold hover:bg-blue-600">Join Now</button>
-        </div>
-      </div>
-    </Carousel>
-  </div>
-  
+    <div className="relative h-screen overflow-hidden rounded-none mt-[-5%]">
+      <Carousel>
+        {carouselItem.map((item, index) => (
+          <div
+            key={index}
+            className="flex h-full items-center justify-center"
+            style={{
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: "0.8",
+            }}
+          >
+            <div className="text-center text-white">
+              <h1 className="text-4xl md:text-6xl font-bold">{item.title}</h1>
+              <p className="text-lg md:text-xl mt-4">{item.description}</p>
+             
+
+            </div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
   );
 }

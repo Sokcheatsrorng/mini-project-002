@@ -72,7 +72,7 @@ const CreateProductForm = () => {
   };
 
   return (
-    <div className="w-full pt-9">
+    <div className="w-full">
       <Formik
         onSubmit={(values: any, { setSubmitting, resetForm }) => {
           console.log(values);
@@ -86,14 +86,14 @@ const CreateProductForm = () => {
         validationSchema={validationSchema}
         initialValues={{
           category: {
-            name: "Hiking shoes",
+            name: "",
             icon: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1693342954-rincon-3-64ee5ca62e001.jpg?crop=1xw:1xh;center,top&resize=980:*",
           },
           name: "",
           desc: "",
           image: undefined,
           price: 0,
-          quantity: 0,
+          quantity: 0
         }}
       >
         {({ isSubmitting, setFieldValue }) => (
@@ -102,7 +102,7 @@ const CreateProductForm = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="name">Product Name: </label>
               <Field
-                placeholder="T-shirt"
+                placeholder="Mazda"
                 className={fieldStyle}
                 name="name"
                 type="text"
@@ -115,7 +115,7 @@ const CreateProductForm = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="desc">Description: </label>
               <Field
-                placeholder="This is a t-shirt"
+                placeholder="Modern car high speed..."
                 className={fieldStyle}
                 name="desc"
                 type="text"
@@ -137,7 +137,7 @@ const CreateProductForm = () => {
                 {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
               </ErrorMessage> */}
             </div>
-            {/* quantity */}
+       
             <div className="flex flex-col gap-2">
               <label htmlFor="price">Quantity: </label>
               <Field
@@ -145,6 +145,15 @@ const CreateProductForm = () => {
                 className={fieldStyle}
                 name="quantity"
                 type="number"
+              />
+              </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="price">Category: </label>
+              <Field
+                placeholder="Electronic Car..."
+                className={fieldStyle}
+                name="category.name"
+                type="text"
               />
               {/* <ErrorMessage name="email">
                 {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}

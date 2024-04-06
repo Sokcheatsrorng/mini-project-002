@@ -5,9 +5,10 @@ import { ProductType } from "@/types/products";
 import Link from "next/link";
 import { Metadata } from "next";
 import HeroSectionComponent from "@/components/herosection/HeroSectionComponent";
+import DisplayDetailinHomePage from "@/components/cards/DisplayDetailinHomePage";
 
 async function fetchData() {
-  const data = await fetch("https://store.istad.co/api/products/ ", {
+  const data = await fetch("https://store.istad.co/api/products/?page=1&pageSize=1000 ", {
     cache: "no-store",
   });
   const res = await data.json();
@@ -42,6 +43,8 @@ export default async function Home() {
           </div>
         </Suspense>
       </div>
+
+    <DisplayDetailinHomePage/>
     </>
   );
 }

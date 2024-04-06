@@ -1,5 +1,7 @@
 import path from 'path';
 import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
+import { IoCreateSharp } from "react-icons/io5";
+import { AiFillHome } from "react-icons/ai";
 
 export const sideBarItem = [
     {
@@ -20,6 +22,11 @@ export const sideBarItem = [
     {
         title: "Create Product",
         path: "/dashboard/create-product",
-        icon: HiViewBoards
+        icon: IoCreateSharp
+    },
+    {
+        title: "Home",
+        path: "./",
+        icon: AiFillHome 
     },
 ]

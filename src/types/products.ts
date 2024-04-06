@@ -6,4 +6,5 @@ export type ProductType = {
     image? : string,
     price?: number
     quantity?:number
+    category?:string
 }

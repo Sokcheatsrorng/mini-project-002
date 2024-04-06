@@ -13,7 +13,7 @@ export default function FooterComponent() {
   if (pathname.includes("/dashboard" ||  "/signup")) return null;
   else
   return (
-    <Footer container className="bg-gray-900 rounded-none mt-20">
+    <Footer container className="bg-gray-900 rounded-none ">
     <div className="w-full">
       <div className=" w-[90%] mx-auto p-0">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
