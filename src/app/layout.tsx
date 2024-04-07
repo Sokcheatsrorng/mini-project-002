@@ -9,19 +9,19 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - MyShop",
-    default: "MyShop",
+    template: "%s - BLOCKCHAIN",
+    default: "BLOCKCHAIN",
   },
-  description: "This is description shop",
-  keywords: ["shop", "ecommerce", "sell"],
+  description: "This website provides details about cars.",
+  keywords: ["cars", "vehicles", "automobiles"],
   openGraph: {
     title: {
-      template: "%s - MyShop",
-      default: "MyShop",
+      template: "%s - BLOCKCHAIN",
+      default: "BLOCKCHAIN",
     },
-    description: "This is description shop",
+    description: "This website provides details about cars.",
     images: [
-      "https://i.pinimg.com/564x/cd/6d/ec/cd6dec6d3967cb8e714aa2357b6c3b73.jpg",
+      "https://store.istad.co/media/brand_images/blockchain_logo_20zXVzP.png",
     ],
   },
 };

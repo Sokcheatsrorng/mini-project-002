@@ -9,7 +9,7 @@ const CardComponent = (props: ProductType) => {
                  className="max-w-sm"
                >
                 <div >
-                   <img src={props.image} alt={props.name} className=" h-[250px] object-cover"/>
+                   <img src={props.image} alt={props.name} className=" h-[250px] object-contain"/>
                 </div>
                  <div>
                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white h-[50px]">
@@ -62,12 +62,7 @@ const CardComponent = (props: ProductType) => {
                    </span>
                  </div>
                  <div className="flex items-center justify-between">
-                   <span className="text-3xl font-bold text-gray-900 dark:text-white">${props.price}</span>
-                   {/* <div
-                     className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
-                   >
-                     Add to cart
-                   </div> */}
+                   <span className="text-3xl font-bold text-red-700 dark:text-white">${props.price}</span>
                  </div>
                     </Card>
   );

@@ -16,8 +16,8 @@ async function fetchData() {
 }
 export const metadata: Metadata = {
   title: "BLOCKCHAIN",
-  description: "Welcome to My Product Page.",
-  keywords: ["shop", "ecommerce", "sell"],
+  description: "Welcome to BLOCKCHAIN Page.",
+  keywords: ["cars", "ecommerce", "sell"],
 };
 export default async function Home() {
   const products = await fetchData();
@@ -30,7 +30,7 @@ export default async function Home() {
           <div className="container grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-8 mx-auto justify-center w-[90%]">
             {products.map((product: ProductType) => {
               return (
-                <Link href={`/products/${product.id}`} key={product.id}>
+                <Link href={`/cars/${product.id}`} key={product.id}>
                   <CardComponent
                     name={product.name}
                     image={product.image}
