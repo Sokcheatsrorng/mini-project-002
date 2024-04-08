@@ -123,8 +123,7 @@ export default function ProductTable() {
                   View Detail
                 </DropdownItem>
 
-                {row.seller === "Sokcheat Srorng" ? (
-                  <>
+                
                     <DropdownItem
                       key="edit"
                       onClick={() => handleEdit(row)}
@@ -140,10 +139,8 @@ export default function ProductTable() {
                     >
                       Delete
                     </DropdownItem>
-                  </>
-                ) : (
-                  <></>
-                )}
+                 
+               
               </DropdownMenu>
             </Dropdown>
           </div>
