@@ -7,6 +7,7 @@ import Image from 'next/image';
 import axios from 'axios';
 import { ProductType } from '@/types/products';
 import { BASE_API_URL } from '@/constant/BASE_URL';
+import { accessToken, cookie } from '@/types/token';
 
 // Define constants for file validation
 const FILE_SIZE = 1024 * 1024 * 5; // 5 MB
@@ -40,10 +41,10 @@ const FormUpdateProduct: React.FC<{ product?: ProductType }> = ({ product }) => 
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null);
 
   // Function to submit form data to server
-  const handleSubmitToServer = async (values: any) => {
+  const handleSubmitToServer = async (values: ProductType) => {
     try {
       let url = `${BASE_API_URL}products/`;
-      let method = 'POST';
+      let method = 'PUT';
       if (values.id) {
         url += `${values.id}/`;
         method = 'PUT';
@@ -53,8 +54,8 @@ const FormUpdateProduct: React.FC<{ product?: ProductType }> = ({ product }) => 
         url: url,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0MjA1ODA1LCJpYXQiOjE3MTIwNDU3NzIsImp0aSI6ImViMDIzOGQ2NjIxYTQ3MWY4NGVkMTE1NTc1ZmRlMmQ3IiwidXNlcl9pZCI6MzV9.fS3bigIdku92aMlx0_eIzbW_4cIlz8u9lTo8JIDxUos',
-          'Cookie': 'csrftoken=oj4kVPKicYgWw6ppqnUlkxbsIjARq6gYbmJKhxl3GEoArkenGSgwfUb4T9UGl8VJ; sessionid=e2k7ty0e7g6wbreo2q0wq5d6tj92t2cc',
+          'Authorization':  `${accessToken}`,
+          'Cookie': `${cookie}`,
         },
         data: values,
       });
@@ -86,12 +87,12 @@ const FormUpdateProduct: React.FC<{ product?: ProductType }> = ({ product }) => 
           <Form className="flex m-[30px] flex-col gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="name">Product Name:</label>
-              <Field placeholder="T-shirt" className={fieldStyle} name="name" type="text" />
+              <Field placeholder="Mazda" className={fieldStyle} name="name" type="text" />
               <ErrorMessage name="name" component="div" className="text-red-600 text-sm italic" />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="desc">Description:</label>
-              <Field placeholder="This is a t-shirt" className={fieldStyle} name="desc" type="text" />
+              <Field placeholder="This is mazda" className={fieldStyle} name="desc" type="text" />
               <ErrorMessage name="desc" component="div" className="text-red-600 text-sm italic" />
             </div>
             <div className="flex flex-col gap-2">

@@ -6,13 +6,16 @@ import Link from "next/link";
 import { Metadata } from "next";
 import HeroSectionComponent from "@/components/herosection/HeroSectionComponent";
 import DisplayDetailinHomePage from "@/components/cards/DisplayDetailinHomePage";
+import { BASE_API_URL } from "@/constant/BASE_URL";
 
-async function fetchData() {
-  const data = await fetch("https://store.istad.co/api/products/?page=1&pageSize=1000 ", {
-    cache: "no-store",
+async function fetchProducts(sellerName:string){
+  const products = await fetch(`${BASE_API_URL}products?page=1&page_size=1000`,{
+    cache: "no-store"
   });
-  const res = await data.json();
-  return res.results;
+  const rest = await products.json();
+  const filteredProducts = rest.results.filter((product: ProductType) => product.seller === sellerName);
+  return filteredProducts;
+
 }
 export const metadata: Metadata = {
   title: "BLOCKCHAIN",
@@ -20,7 +23,8 @@ export const metadata: Metadata = {
   keywords: ["cars", "ecommerce", "sell"],
 };
 export default async function Home() {
-  const products = await fetchData();
+  const sellerName ="Sokcheat Srorng"
+  const products = await fetchProducts(sellerName);
   return (
     <>
     <HeroSectionComponent/>

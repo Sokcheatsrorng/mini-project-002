@@ -87,7 +87,7 @@ const CreateProductForm = () => {
         initialValues={{
           category: {
             name: "",
-            icon: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1693342954-rincon-3-64ee5ca62e001.jpg?crop=1xw:1xh;center,top&resize=980:*",
+            icon: "",
           },
           name: "",
           desc: "",
@@ -107,9 +107,7 @@ const CreateProductForm = () => {
                 name="name"
                 type="text"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
+            
             </div>
             {/* description */}
             <div className="flex flex-col gap-2">
@@ -120,9 +118,7 @@ const CreateProductForm = () => {
                 name="desc"
                 type="text"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
+             
             </div>
             {/* price */}
             <div className="flex flex-col gap-2">
@@ -133,9 +129,7 @@ const CreateProductForm = () => {
                 name="price"
                 type="number"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
+             
             </div>
        
             <div className="flex flex-col gap-2">
@@ -155,11 +149,7 @@ const CreateProductForm = () => {
                 name="category.name"
                 type="text"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
-
-              {/* Image  */}
+             
               <div>
                 <Field
                   name="image"
